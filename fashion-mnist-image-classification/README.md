@@ -1,73 +1,98 @@
-# Fashion MNIST - CNN Image Classifier
+# Fashion MNIST - Image Classification with CNNs
 
-A deep learning project using Convolutional Neural Networks (CNNs) to classify images from the Fashion MNIST dataset. This dataset includes grayscale images of clothing items (e.g., shirts, sneakers, bags), with 10 distinct classes.
-
----
-
-## Model Overview
-
-- **Architecture**: 3 Convolutional layers with Batch Normalization, MaxPooling, and Dropout
-- **Dense Layers**: Flatten + Dense + Output Softmax
-- **Optimization**: Adam Optimizer with Sparse Categorical Crossentropy
-- **Callbacks**: EarlyStopping and ModelCheckpoint for better generalization
+A deep learning project that classifies clothing images from the Fashion MNIST dataset using a Convolutional Neural Network (CNN). The model is trained with TensorFlow/Keras and includes training visualization, callbacks, and dark-themed performance plots.
 
 ---
 
-## Performance
+## Project Highlights
 
-- Achieves ~91% accuracy on the validation set after tuning.
-- Includes real-time plots of accuracy and loss in a futuristic dark theme.
+- **Dataset**: [Fashion MNIST](https://github.com/zalandoresearch/fashion-mnist) - 28x28 grayscale images of 10 clothing categories
+- **Architecture**: CNN with Batch Normalization, Dropout, and MaxPooling
+- **Loss**: Sparse Categorical Crossentropy
+- **Optimizer**: Adam
+- **Callbacks**: EarlyStopping and ModelCheckpoint
+- **Visualization**: Dark-themed accuracy and loss plots
 
 ---
 
-## Dataset
+## Folder Structure
 
-- Source: [`tensorflow.keras.datasets.fashion_mnist`](https://www.tensorflow.org/datasets/catalog/fashion_mnist)
-- Train: 60,000 images
-- Test: 10,000 images
-- Image Size: 28x28 grayscale
+```
+
+fashion-mnist-image-classification/
+├── fashion-mnist-image-classification.ipynb    # Notebook version
+├── fashion-mnist-image-classification.py       # Python script version
+├── requirements.txt                            # Project dependencies
+├── README.md                                   # Project documentation
+└── images/                                     # Training plots 
+    ├── model_accuracy_20250622_233613.png
+    └── model_loss_20250622_233613.png
+
+````
+
+---
+
+## Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/MoustafaMohamed01/DL-Projects.git
+cd DL-Projects/fashion-mnist-image-classification
+````
+
+### 2. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
 
 ---
 
 ## How to Run
 
- - **Step 1: Install dependencies**
+### Python Script
+
 ```bash
-    pip install -r requirements.txt
-````
-- **Step 2: Run the main script**
+python fashion-mnist-image-classification.py
+```
+
+### Jupyter Notebook
+
+Open and run the cells in:
+
 ```bash
-    python fashion_mnist_optimized.py
-````
+fashion-mnist-image-classification.ipynb
+```
 
 ---
 
 ## Sample Output
 
-* Accuracy & loss visualizations using `matplotlib`
-* Neon-colored futuristic charts in dark mode
+<p align="center">
+  <img src="images/model_accuracy_20250622_233613.png" width="45%">
+  <img src="images/model_loss_20250622_233613.png" width="45%">
+</p>
 
 ---
 
-## Dependencies
+## Model Performance
 
-* `TensorFlow`
-* `NumPy`
-* `Matplotlib`
-* `scikit-learn`
-
-See [`requirements.txt`](./requirements.txt) for full details.
+| Metric            | Value                           |
+| ----------------- | ------------------------------- |
+| **Test Accuracy** | \~91%                        |
+| **Loss Function** | Sparse Categorical Crossentropy |
+| **Input Shape**   | 28 × 28 × 1                     |
 
 ---
 
-## Project Structure
+## Requirements
 
-```
-fashion-mnist-image-classification
-├── fashion_mnist_optimized.py      # Main training script
-├── requirements.txt                # Project dependencies
-└── README.md                       # Project documentation
-```
+* `TensorFlow >= 2.16`
+* `NumPy >= 1.22`
+* `Matplotlib >= 3.7`
+
+See [requirements.txt](./requirements.txt) for the full list.
 
 ---
 
@@ -75,6 +100,6 @@ fashion-mnist-image-classification
 
 **Moustafa Mohamed**
 Aspiring AI Developer
-[LinkedIn](https://www.linkedin.com/in/moustafamohamed01) | [GitHub](https://github.com/MoustafaMohamed01) | [Portfolio](https://moustafamohamed.netlify.app/)
+[LinkedIn](https://www.linkedin.com/in/moustafamohamed01) | [Kaggle](https://www.kaggle.com/moustafamohamed01) | [Portfolio](https://moustafamohamed.netlify.app/)
 
 ---
