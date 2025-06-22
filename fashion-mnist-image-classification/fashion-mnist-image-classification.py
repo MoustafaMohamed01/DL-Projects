@@ -3,6 +3,8 @@ import random
 import tensorflow as tf
 from tensorflow.keras import datasets, layers, models, callbacks
 import matplotlib.pyplot as plt
+import os
+from datetime import datetime
 
 np.random.seed(0)
 random.seed(0)
@@ -49,36 +51,38 @@ def build_model():
     )
     return model
 
-def plot_training_history(history):
-    import matplotlib.pyplot as plt
-    plt.style.use('dark_background') 
+def plot_training_history(history, save_dir='images'):
+    os.makedirs(save_dir, exist_ok=True)
 
-    plt.figure(figsize=(12, 5))
-    color_train = '#00FFAB' 
-    color_val = '#FF6EC7'    
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
 
-    plt.subplot(1, 2, 1)
-    plt.plot(history.history['sparse_categorical_accuracy'], label='Train Accuracy', color=color_train, linewidth=2)
-    plt.plot(history.history['val_sparse_categorical_accuracy'], label='Val Accuracy', color=color_val, linestyle='--', linewidth=2)
-    plt.title('📈 Accuracy Over Epochs', fontsize=14, color='#00FFFF')
+    plt.style.use('dark_background')
+
+    plt.figure(figsize=(6, 5))
+    plt.plot(history.history['sparse_categorical_accuracy'], label='Train Accuracy', color='#00FFAB', linewidth=2)
+    plt.plot(history.history['val_sparse_categorical_accuracy'], label='Val Accuracy', color='#FF6EC7', linestyle='--', linewidth=2)
+    plt.title('Accuracy Over Epochs', fontsize=14, color='#00FFFF')
     plt.xlabel('Epoch', fontsize=12)
     plt.ylabel('Accuracy', fontsize=12)
     plt.legend(loc='lower right')
     plt.grid(True, linestyle='--', alpha=0.3)
+    acc_path = os.path.join(save_dir, f"model_accuracy_{timestamp}.png")
+    plt.savefig(acc_path, dpi=300, bbox_inches='tight')
+    print(f"Accuracy plot saved to: {acc_path}")
+    plt.show()
 
-    plt.subplot(1, 2, 2)
-    plt.plot(history.history['loss'], label='Train Loss', color=color_train, linewidth=2)
-    plt.plot(history.history['val_loss'], label='Val Loss', color=color_val, linestyle='--', linewidth=2)
-    plt.title('📉 Loss Over Epochs', fontsize=14, color='#FF00FF')
+    plt.figure(figsize=(6, 5))
+    plt.plot(history.history['loss'], label='Train Loss', color='#00FFAB', linewidth=2)
+    plt.plot(history.history['val_loss'], label='Val Loss', color='#FF6EC7', linestyle='--', linewidth=2)
+    plt.title('Loss Over Epochs', fontsize=14, color='#FF00FF')
     plt.xlabel('Epoch', fontsize=12)
     plt.ylabel('Loss', fontsize=12)
     plt.legend(loc='upper right')
     plt.grid(True, linestyle='--', alpha=0.3)
-
-    plt.suptitle('Training Progress Overview 🚀', fontsize=16, color='cyan')
-    plt.tight_layout(rect=[0, 0, 1, 0.95])
+    loss_path = os.path.join(save_dir, f"model_loss_{timestamp}.png")
+    plt.savefig(loss_path, dpi=300, bbox_inches='tight')
+    print(f"Loss plot saved to: {loss_path}")
     plt.show()
-
 
 def main():
     train_images, train_labels, test_images, test_labels = load_and_preprocess_data()
