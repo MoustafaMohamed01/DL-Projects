@@ -96,7 +96,7 @@ The model saves generated images to `./outputs/` every 50 epochs.
 
 | Epoch 001                          | Epoch 50                            | Epoch 100                            |
 | ---------------------------------- | ------------------------------------ | ------------------------------------ |
-| ![E1](outputs/anime_epoch_001.png) | ![E50](outputs/anime_epoch_50.png) | ![E100](outputs/anime_epoch_100.png) |
+| ![E1](outputs/anime_epoch_001.png) | ![E50](outputs/anime_epoch_050.png) | ![E100](outputs/anime_epoch_100.png) |
 
 
 ---
