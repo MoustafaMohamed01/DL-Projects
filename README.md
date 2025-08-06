@@ -15,6 +15,7 @@ Each subfolder within this repository contains an independent deep learning proj
 | [Fashion MNIST Image Classification](#3-fashion-mnist-image-classification)                         | TensorFlow/Keras | Image Classification  | CNNs, Regularization                    |
 | [Face Mask Detection](#4-face-mask-detection)                                                       | TensorFlow/Keras | Binary Classification | Real-Time Detection, CNN, OpenCV        |
 | [MNIST GAN – Digit Generation](#5-mnist-gan--digit-generation)                                      | TensorFlow       | Generative Modeling   | GANs, Image Synthesis                   |
+| [Anime Face Generator (DCGAN)](#6-anime-face-generator-dcgan)                                       | TensorFlow       | Generative Modeling   | DCGAN, Image Generation, Anime Faces    |
 
 ---
 
@@ -22,14 +23,14 @@ Each subfolder within this repository contains an independent deep learning proj
 
 A convolutional neural network (CNN) designed to classify images of fruits and vegetables.
 
-**Technologies:** TensorFlow, Keras, Python
+**Technologies:** TensorFlow, Keras, Python  
 **Dataset:** [Kaggle - Fruit and Vegetable Image Recognition](https://www.kaggle.com/datasets/kritikseth/fruit-and-vegetable-image-recognition)
 
 ### Highlights
 
-* Data preprocessing and augmentation
-* CNN architecture with Dropout and MaxPooling
-* Real-time prediction support with confidence scores
+* Data preprocessing and augmentation  
+* CNN architecture with Dropout and MaxPooling  
+* Real-time prediction support with confidence scores  
 * Training and validation performance visualization
 
 📁 Folder: [Fruits-and-Vegetables-Image-Recognition-Dataset](./Fruits-and-Vegetables-Image-Recognition-Dataset)
@@ -40,14 +41,14 @@ A convolutional neural network (CNN) designed to classify images of fruits and v
 
 A binary classification model developed using PyTorch to predict tumor malignancy from the Breast Cancer Wisconsin dataset.
 
-**Technologies:** PyTorch, Scikit-learn, Matplotlib
-**Dataset:** [sklearn.datasets.load\_breast\_cancer](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_breast_cancer.html)
+**Technologies:** PyTorch, Scikit-learn, Matplotlib  
+**Dataset:** [sklearn.datasets.load_breast_cancer](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_breast_cancer.html)
 
 ### Highlights
 
-* FFNN architecture
-* Binary cross-entropy loss with Adam optimizer
-* Training curves and evaluation metrics
+* FFNN architecture  
+* Binary cross-entropy loss with Adam optimizer  
+* Training curves and evaluation metrics  
 * Available in Jupyter and standalone script formats
 
 📁 Folder: [breast-cancer-prediction](./breast-cancer-prediction)
@@ -58,14 +59,14 @@ A binary classification model developed using PyTorch to predict tumor malignanc
 
 A CNN-based image classifier trained on Fashion MNIST dataset, classifying clothing items into 10 categories.
 
-**Technologies:** TensorFlow, Keras
+**Technologies:** TensorFlow, Keras  
 **Dataset:** [`tensorflow.keras.datasets.fashion_mnist`](https://www.tensorflow.org/datasets/catalog/fashion_mnist)
 
 ### Highlights
 
-* Batch Normalization and Dropout layers
-* EarlyStopping and ModelCheckpoint callbacks
-* Accuracy up to 91–93% with tuning
+* Batch Normalization and Dropout layers  
+* EarlyStopping and ModelCheckpoint callbacks  
+* Accuracy up to 91–93% with tuning  
 * Stylish metric visualizations
 
 📁 Folder: [Fashion-MNIST-Image-Classification](./Fashion-MNIST-Image-Classification)
@@ -76,15 +77,15 @@ A CNN-based image classifier trained on Fashion MNIST dataset, classifying cloth
 
 A real-time CNN classifier that detects whether a person is wearing a face mask or not.
 
-**Technologies:** TensorFlow, Keras, OpenCV, Python
+**Technologies:** TensorFlow, Keras, OpenCV, Python  
 **Dataset:** [Kaggle - Face Mask Dataset](https://www.kaggle.com/datasets/omkargurav/face-mask-dataset)
 
 ### Highlights
 
-* Binary classification: With Mask 😷 vs Without Mask 😐
-* Data augmentation and preprocessing
-* Real-time prediction from user-provided images
-* Model saved and reloadable (`.h5`)
+* Binary classification: With Mask 😷 vs Without Mask 😐  
+* Data augmentation and preprocessing  
+* Real-time prediction from user-provided images  
+* Model saved and reloadable (`.h5`)  
 * GPU support and training visualizations
 
 📁 Folder: [face-mask-detection](./face-mask-detection)
@@ -95,17 +96,36 @@ A real-time CNN classifier that detects whether a person is wearing a face mask 
 
 A Generative Adversarial Network (GAN) that synthesizes realistic handwritten digits from the MNIST dataset.
 
-**Technologies:** TensorFlow, Python
+**Technologies:** TensorFlow, Python  
 **Dataset:** [`tensorflow.keras.datasets.mnist`](https://www.tensorflow.org/datasets/catalog/mnist)
 
 ### Highlights
 
-* Fully functional GAN (Generator + Discriminator)
-* Saves generated digit images every epoch
-* GAN-stabilization tricks: label smoothing, custom beta values
+* Fully functional GAN (Generator + Discriminator)  
+* Saves generated digit images every epoch  
+* GAN-stabilization tricks: label smoothing, custom beta values  
 * Available in both `.py` and `.ipynb` formats
 
 📁 Folder: [mnist-gan](./mnist-gan)
+
+---
+
+## 6. Anime Face Generator (DCGAN)
+
+A Deep Convolutional GAN (DCGAN) trained on anime character faces to generate high-quality synthetic images.
+
+**Technologies:** TensorFlow, Keras, Python  
+**Dataset:** [Kaggle - Anime Face Dataset](https://www.kaggle.com/splcher/animefacedataset)
+
+### Highlights
+
+* DCGAN architecture with Conv2DTranspose and LeakyReLU  
+* Trained on 64×64 anime face images  
+* Outputs generated image grids every 50 epochs  
+* Modular code: available in both notebook and script formats  
+* Excellent visual results for anime face synthesis
+
+📁 Folder: [anime-gan](./anime-gan)
 
 ---
 
@@ -116,7 +136,7 @@ A Generative Adversarial Network (GAN) that synthesizes realistic handwritten di
 ```bash
 git clone https://github.com/MoustafaMohamed01/DL-Projects.git
 cd DL-Projects
-```
+````
 
 2. **Install Dependencies**
    Each project includes a `requirements.txt`. To install dependencies:
@@ -147,6 +167,6 @@ Ideas, feedback, and improvements are always appreciated.
 * **LinkedIn:** [Moustafa Mohamed](https://www.linkedin.com/in/moustafamohamed01/)
 * **GitHub:** [MoustafaMohamed01](https://github.com/MoustafaMohamed01)
 * **Kaggle:** [moustafamohamed01](https://www.kaggle.com/moustafamohamed01)
-* **Portfolio:** [Moustafa Mohamed](https://moustafamohamed.netlify.app/)
+* **Portfolio:** [moustafamohamed.netlify.app](https://moustafamohamed.netlify.app/)
 
 ---
